@@ -96,7 +96,7 @@ El informe (sección 4) describe una pantalla con más elementos de los que cubr
 | Accesos rápidos Ver, Salir/Hacer, Estudiar | Solo visuales o no mostrados; sin lógica (módulos diferidos) |
 | Botón CAOS | Fuera de la pantalla del MVP (se identifica como futuro en los wireframes 0.14) |
 | Aceptar / Vetar, explicación, indicador de patrocinio | Incluido |
-| «+10 XP» y racha tras decidir | Incluido (opcional |
+| «+10 XP» y racha tras decidir | Incluido (opcional) |
 
 ## 6. Métricas del informe (sección 14)
 
