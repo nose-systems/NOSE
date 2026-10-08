@@ -54,7 +54,7 @@ El flujo central es: **necesidad → contexto mínimo → una opción principal 
 | US-03 | Contexto mínimo | E1 | Crítica | Incluida | Sprint 1 | 1.7 |
 | US-04 | Qué Comer | E2 | Crítica | Incluida | Sprint 1 | 1.2, 1.4, 1.5 |
 | US-05 | Recomendación principal | E2 | Crítica | Incluida | Sprint 1 (API), Sprint 2 (UI) | 1.4, 2.5 |
-| US-06 | Aceptar | E2 | Crítica | Incluida ⚠️ | Sprint 2. La aceptación se registra; no hay acción externa posterior | 2.2, 2.5 |
+| US-06 | Aceptar | E2 | Crítica | Incluida | Sprint 2. La aceptación se registra; no hay acción externa posterior | 2.2, 2.5 |
 | US-07 | Vetar | E2 / E3 | Crítica | Incluida | Sprint 2 | 2.1, 2.5 |
 | US-08 | Aprendizaje | E2 / E3 | Alta | Incluida | Sprint 3 | 3.2 |
 | US-09 | Preferencias | E2 / E3 | Alta | Incluida | Sprint 1 (básico), Sprint 3 (editable) | 1.3, 3.1 |
