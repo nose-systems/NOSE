@@ -106,7 +106,7 @@ El informe (sección 4) describe una pantalla con más elementos de los que cubr
 | Decision Completion Rate | Incluida | 3.3 |
 | Veto Rate | Incluida | 3.3 |
 | Time to Value | Incluida | 2.4, 3.3 |
-| Time to Decision ⚠️ | Diferida a la Fase 1.5 | Los eventos de 2.4 permiten calcularla después |
+| Time to Decision | Diferida a la Fase 1.5 | Los eventos de 2.4 permiten calcularla después |
 | Decisiones por usuario ⚠️ | Diferida a la Fase 1.5 | Los eventos de 2.4 permiten calcularla después |
 | Retención D1 / D7 / D30 | Diferida a la Fase 1.5 | Requiere usuarios reales durante varios días |
 | Share Rate | Diferida | No hay función de compartir en el MVP |
