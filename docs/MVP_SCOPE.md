@@ -68,7 +68,7 @@ El flujo central es: **necesidad → contexto mínimo → una opción principal 
 | US-17 | Fallback | E5 | Alta | Incluida | Sprint 1 (motor), Sprint 3 (QA) | 1.5, 3.6 |
 | US-18 | Analítica | E5 | Crítica | Incluida | Sprint 2 y Sprint 3 | 2.4, 3.3 |
 | US-19 | Privacidad | E5 | Crítica | Incluida | Sprint 3 (consentimiento), apoyado en Sprint 1 | 1.3, 3.1 |
-| US-20 | Módulos extensibles | E5 | Alta | Incluida ⚠️ | Solo como principio de diseño (motor genérico). No se implementa ningún otro módulo | 0.12, 1.5, 2.7 |
+| US-20 | Módulos extensibles | E5 | Alta | Incluida como arquitectura | Solo como principio de diseño (motor genérico). No se implementa ningún otro módulo | 0.12, 1.5, 2.7 |
 | US-21 | Qué Ver | E6 | Futura | Diferida | Fase 2 (Frecuencia) | F.4 |
 | US-22 | A Dónde Ir | E6 | Futura | Diferida | Fase posterior a la 2 (el roadmap no fija fase exacta) | F.4 |
 | US-23 | Estudio | E6 | Futura | Diferida | Fase 2 (Frecuencia) | F.4 |
