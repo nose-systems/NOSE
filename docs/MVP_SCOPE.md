@@ -50,7 +50,7 @@ El flujo central es: **necesidad → contexto mínimo → una opción principal 
 | US | Nombre | Épica | Prioridad | Estado | Sprint / motivo | Tickets |
 | --- | --- | --- | --- | --- | --- | --- |
 | US-01 | Inicio rápido | E1 | Crítica | Incluida | Sprint 1 | 0.14, 1.7 |
-| US-02 | Lenguaje natural | E1 | Alta | Incluida ⚠️ | Sprint 1. Captura de texto libre; la intención se interpreta por reglas/palabras clave | 1.7, 1.5 |
+| US-02 | Lenguaje natural | E1 | Alta | Incluida | Sprint 1. Captura de texto libre; la intención se interpreta por reglas/palabras clave | 1.7, 1.5 |
 | US-03 | Contexto mínimo | E1 | Crítica | Incluida | Sprint 1 | 1.7 |
 | US-04 | Qué Comer | E2 | Crítica | Incluida | Sprint 1 | 1.2, 1.4, 1.5 |
 | US-05 | Recomendación principal | E2 | Crítica | Incluida | Sprint 1 (API), Sprint 2 (UI) | 1.4, 2.5 |
