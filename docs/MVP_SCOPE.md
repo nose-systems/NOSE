@@ -64,7 +64,7 @@ El flujo central es: **necesidad → contexto mínimo → una opción principal 
 | US-13 | XP y racha | E4 | Media | Incluida | Sprint 2 (API), Sprint 3 (UI) | 2.2, 2.3, 3.4 |
 | US-14 | Botón del Caos | E4 | Media | Diferida | Fase 3 (Social). Requiere más de un módulo | F.2 |
 | US-15 | Parejas y grupos | E4 | Media | Diferida | Fase 3 (Social) | F.3 |
-| US-16 | Base de candidatos | E5 | Alta | Incluida ⚠️ | Sprint 1, solo por seed. Sin interfaz de administración | 1.2 |
+| US-16 | Base de candidatos | E5 | Alta | Incluida | Sprint 1, solo por seed. Sin interfaz de administración | 1.2 |
 | US-17 | Fallback | E5 | Alta | Incluida | Sprint 1 (motor), Sprint 3 (QA) | 1.5, 3.6 |
 | US-18 | Analítica | E5 | Crítica | Incluida | Sprint 2 y Sprint 3 | 2.4, 3.3 |
 | US-19 | Privacidad | E5 | Crítica | Incluida | Sprint 3 (consentimiento), apoyado en Sprint 1 | 1.3, 3.1 |
