@@ -60,7 +60,7 @@ El flujo central es: **necesidad → contexto mínimo → una opción principal 
 | US-09 | Preferencias | E2 / E3 | Alta | Incluida | Sprint 1 (básico), Sprint 3 (editable) | 1.3, 3.1 |
 | US-10 | Explicación | E2 / E3 | Alta | Incluida | Sprint 1 (motor), Sprint 2 (UI) | 1.5, 2.5 |
 | US-11 | Time to Value | E3 | Alta | Incluida | Sprint 2 (eventos), Sprint 3 (métrica) | 2.4, 3.3 |
-| US-12 | DICE | E4 | Media | Diferida ⚠️ | Fase 2+. Solo microcopy si sobra tiempo | F.1 |
+| US-12 | DICE | E4 | Media | Diferida | Fase 2+. Solo microcopy si sobra tiempo | F.1 |
 | US-13 | XP y racha | E4 | Media | Incluida | Sprint 2 (API), Sprint 3 (UI) | 2.2, 2.3, 3.4 |
 | US-14 | Botón del Caos | E4 | Media | Diferida | Fase 3 (Social). Requiere más de un módulo | F.2 |
 | US-15 | Parejas y grupos | E4 | Media | Diferida | Fase 3 (Social) | F.3 |
