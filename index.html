@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFC93C">
+<title>NOSE · Del “no sé” al “ya sé”</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7FF;--surface:#fff;--ink:#2A1240;--muted:#5E4B78;--line:#D9CFEA;--edge:#2A1240;--sun:#FFC93C;--lulo:#E8590C;--focus:#B8400A;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#150826;--surface:#231238;--ink:#F6F2FB;--muted:#BBA9D6;--line:#3D2860;--edge:#8A66C2;--lulo:#FF8A4C;--focus:#FFC93C;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#150826;--surface:#231238;--ink:#F6F2FB;--muted:#BBA9D6;--line:#3D2860;--edge:#8A66C2;--lulo:#FF8A4C;--focus:#FFC93C;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Figtree,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;padding:8px clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:3px solid var(--edge)}
+.brand{margin-right:auto;font:800 22px 'Bricolage Grotesque';color:var(--ink);text-decoration:none}
+.top a.l{padding:6px 12px;border-radius:99px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;border:2px solid transparent}
+.top a.l:hover{background:var(--sun);border-color:#2A1240;color:#2A1240}
+@media(max-width:640px){.top a.l{display:none}}
+.btn{font:700 15px Figtree;padding:11px 22px;border-radius:99px;border:3px solid var(--edge);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;box-shadow:4px 4px 0 var(--edge);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge)}.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--edge)}
+.hero{position:relative;overflow:hidden;min-height:min(92svh,860px);display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px 120px;color:#2A1240;background:#FFC93C radial-gradient(#2A124026 1.6px,transparent 1.7px) 0 0/22px 22px}
+.blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.75;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:46vw;height:46vw;left:-10vw;top:-12vw;background:#FF9F43}.b2{width:40vw;height:40vw;right:-8vw;top:10vh;background:#FFE58A;animation-duration:18s}.b3{width:36vw;height:36vw;left:30vw;bottom:-18vw;background:#FF7A2F;opacity:.5;animation-duration:22s}
+@keyframes drift{to{transform:translate(6vw,4vw) scale(1.18)}}
+.st{position:absolute;width:var(--w,clamp(58px,8vw,110px));pointer-events:none;will-change:transform}
+.st svg{width:100%;aspect-ratio:1;filter:drop-shadow(0 7px 0 rgba(42,18,64,.28));transform:rotate(var(--r));animation:bob var(--t,6s) ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-18px) rotate(calc(var(--r) + 10deg))}}
+.hc{position:relative;z-index:2;max-width:900px}
+h1{display:flex;justify-content:center;align-items:center;font-weight:800;font-size:clamp(88px,21vw,240px);line-height:.95;letter-spacing:-.03em}
+.ch{display:inline-block;animation:drop .95s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i)*.1s)}
+@keyframes drop{0%{transform:translateY(-130%) rotate(-14deg);opacity:0}55%{opacity:1}100%{transform:none;opacity:1}}
+.plate{position:relative;width:.84em;height:.84em;margin:0 .03em;border-radius:50%;background:#FFF8EC;border:.06em solid #2A1240;box-shadow:.05em .06em 0 #2A1240;display:grid;place-items:center;animation:drop .95s cubic-bezier(.3,1.5,.5,1) .2s both}
+.plate.land{animation:landp .65s cubic-bezier(.3,1.8,.5,1)}@keyframes landp{0%{transform:scale(.7) rotate(-18deg)}}
+.plate svg{width:68%;height:68%}.plate.spin svg{animation:spin .5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lema{font:700 clamp(22px,3vw,34px)/1.2 'Bricolage Grotesque';margin:14px 0 6px;animation:rise .8s .7s both}
+.res{min-height:1.7em;margin:0 0 20px;font-size:clamp(17px,2vw,21px);animation:rise .8s .85s both}
+.res b{font:800 1.15em 'Bricolage Grotesque';background:#2A1240;color:#FFC93C;padding:2px 12px;border-radius:99px;white-space:nowrap}
+.act{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:rise .8s 1s both}
+.sub{max-width:52ch;margin:26px auto 0;animation:rise .8s 1.1s both}
+@keyframes rise{from{transform:translateY(24px);opacity:0}}
+.hero .btn{border-color:#2A1240;box-shadow:4px 4px 0 #2A1240;color:#2A1240;background:#FFF8EC}.hero .btn.fill{background:#2A1240;color:#FFC93C}
+.band{position:relative;z-index:3;margin:-46px -24px 0;transform:rotate(-1.8deg);background:#2A1240;color:#FFC93C;border-block:4px solid #FFC93C;overflow:hidden;padding:12px 0}
+.bi{display:flex;width:max-content;animation:slide 30s linear infinite}
+.bi span{display:flex;align-items:center;gap:22px;padding-right:22px;font:800 clamp(22px,3vw,32px) 'Bricolage Grotesque';white-space:nowrap}
+.bi svg{width:34px;height:34px;animation:spin 8s linear infinite}@keyframes slide{to{transform:translateX(-50%)}}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+h2{font-size:clamp(30px,4.5vw,46px);line-height:1.1;font-weight:800;margin:80px 0 4px}
+.sq{display:block;width:170px;height:14px;margin:0 0 14px;overflow:visible}
+.sq path{fill:none;stroke:var(--lulo);stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.1s ease .2s}
+.in .sq path,.sq.in path{stroke-dashoffset:0}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 28px}
+.js .rv{opacity:0;transform:translateY(40px) rotate(-1deg);transition:opacity .6s,transform .8s cubic-bezier(.2,1.3,.4,1)}.js .rv.in{opacity:1;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.card{border:3px solid var(--edge);border-radius:24px;background:var(--surface);box-shadow:6px 6px 0 var(--a,var(--edge));padding:22px 20px;transition:transform .3s}
+.card:hover{transform:translate(-3px,-3px) rotate(-.6deg)}
+.card .n{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--a);color:#2A1240;border:3px solid var(--edge);font:800 22px 'Bricolage Grotesque';margin-bottom:10px}
+.card h3{font-size:22px;margin-bottom:4px}.card p{margin:0;color:var(--muted);font-size:15px}
+.demo{display:flex;gap:40px;align-items:center;flex-wrap:wrap;justify-content:center;padding:34px 20px;border:3px solid var(--edge);border-radius:32px;background:var(--surface);box-shadow:8px 8px 0 var(--sun)}
+.phone{width:290px;border:5px solid var(--edge);border-radius:38px;background:var(--bg);padding:18px 16px 22px;box-shadow:6px 6px 0 var(--lulo);min-height:430px;display:flex;flex-direction:column;gap:12px}
+.phone .q{font:800 20px 'Bricolage Grotesque'}.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:700 14px Figtree;padding:7px 14px;border-radius:99px;border:2px solid var(--edge);background:var(--surface);color:var(--ink);cursor:pointer;transition:transform .2s,background .2s}
+.chip:hover{transform:scale(1.07)}.chip[aria-pressed=true]{background:var(--sun);color:#2A1240}
+.rec{margin-top:auto;border:3px solid var(--edge);border-radius:20px;padding:14px;background:var(--surface);text-align:center;animation:rise .5s both}
+.rec svg{width:84px;height:84px;animation:bob 3s ease-in-out infinite alternate;--r:-6deg}
+.rec h3{font-size:22px}.rec p{margin:4px 0 10px;font-size:13px;color:var(--muted)}
+.rec .row{display:flex;gap:8px;justify-content:center}.rec .btn{padding:6px 14px;font-size:13px;box-shadow:3px 3px 0 var(--edge)}
+.side{flex:1;min-width:240px;max-width:420px}.side h3{font-size:clamp(24px,3vw,32px);margin-bottom:8px}.side p{color:var(--muted)}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:90px}
+.tech .card{box-shadow:5px 5px 0 var(--a);padding:16px}.tech h3{font-size:18px}.tech small{display:block;color:var(--lulo);font-weight:700;margin-bottom:2px}
+.foot{display:flex;align-items:center;justify-content:center;gap:12px;background:#2A1240;color:#FFC93C;padding:28px 18px;font:800 18px 'Bricolage Grotesque';text-align:center}.foot svg{width:36px;height:36px;flex:none}
+.fx{position:fixed;z-index:60;pointer-events:none;border-radius:2px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}.sq path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="s-arepa" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25" fill="#F2B952"/><circle cx="32" cy="32" r="17" fill="#FFE29A" stroke-width="2"/><path d="M22 27l6 4M35 22l4 6M25 41l7 3M40 36l4 5" fill="none" stroke-width="2.500"/></g></symbol>
+<symbol id="s-pizza" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17c17-9 33-9 50 0L32 59z" fill="#FFCB57"/><path d="M7 17c17-9 33-9 50 0l-3 7c-15-7-29-7-44 0z" fill="#E8913A"/><circle cx="25" cy="31" r="4.500" fill="#E5484D" stroke-width="2"/><circle cx="38" cy="32" r="4.500" fill="#E5484D" stroke-width="2"/><circle cx="31" cy="44" r="4" fill="#E5484D" stroke-width="2"/></g></symbol>
+<symbol id="s-sushi" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25" fill="#34493A"/><circle cx="32" cy="32" r="17" fill="#FFF8EC" stroke-width="2"/><circle cx="32" cy="32" r="9" fill="#FF7F5E" stroke-width="2"/></g></symbol>
+<symbol id="s-taco" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 46a27 27 0 0154 0z" fill="#FFCF5C"/><path d="M9 44c4-5 6 2 10-2s6 2 10-2 6 2 10-2 6 2 10-2" fill="none" stroke="#5CB85C" stroke-width="4"/><circle cx="22" cy="34" r="3.500" fill="#E5484D" stroke-width="2"/><circle cx="38" cy="30" r="3.500" fill="#E5484D" stroke-width="2"/></g></symbol>
+<symbol id="s-coffee" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26h34v12a15 15 0 01-15 15h-4A15 15 0 0110 38z" fill="#FFF8EC"/><path d="M44 30h4a7 7 0 010 14h-6" fill="none"/><path d="M14 31h26" stroke="#8B5A2B" stroke-width="4" fill="none"/><path d="M20 8c-4 4 3 6 0 11M31 8c-4 4 3 6 0 11" fill="none"/></g></symbol>
+<symbol id="s-icecream" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 31h26L32 60z" fill="#E8A857"/><path d="M16 32a16 16 0 1132 0z" fill="#FF9EBB"/><circle cx="32" cy="9" r="3.500" fill="#E5484D" stroke-width="2"/></g></symbol>
+<symbol id="s-clapper" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="25" width="50" height="31" rx="4" fill="#43C6E5"/><path d="M8 23L55 12l3 10z" fill="#2A1240"/><path d="M27 32l13 8-13 8z" fill="#FFF8EC" stroke-width="2"/></g></symbol>
+<symbol id="s-compass" viewBox="0 0 64 64"><g stroke="#2A1240" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="25" fill="#FF5D8F"/><circle cx="32" cy="32" r="18" fill="#FFF8EC" stroke-width="2"/><path d="M32 17l7 15H25z" fill="#E5484D" stroke-width="2"/><path d="M32 47l-7-15h14z" fill="#2A1240" stroke-width="2"/></g></symbol>
+</defs></svg>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="top"><a class="brand" href="#inicio">NOSE</a><a class="l" href="#como">Cómo funciona</a><a class="l" href="#prueba">Pruébalo</a><a class="l" href="#por-que">Por qué</a><a class="l" href="#bajo">Por dentro</a></header>
+
+<section class="hero" id="inicio">
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div aria-hidden="true">
+<div class="st" style="left:4%;top:12%"><svg style="--r:-14deg;--t:6s"><use href="#s-pizza"/></svg></div>
+<div class="st" style="left:3%;top:52%"><svg style="--r:10deg;--t:7s"><use href="#s-taco"/></svg></div>
+<div class="st" style="left:15%;top:76%"><svg style="--r:-8deg;--t:5.500s"><use href="#s-coffee"/></svg></div>
+<div class="st" style="right:5%;top:10%"><svg style="--r:12deg;--t:6.500s"><use href="#s-clapper"/></svg></div>
+<div class="st" style="right:3%;top:48%"><svg style="--r:-10deg;--t:7.500s"><use href="#s-compass"/></svg></div>
+<div class="st" style="right:13%;top:74%"><svg style="--r:9deg;--t:5s"><use href="#s-icecream"/></svg></div>
+</div>
+<div class="hc">
+<h1 aria-label="NOSE"><span class="ch" style="--i:0" aria-hidden="true">N</span><span class="plate" id="plate" aria-hidden="true"><svg viewBox="0 0 64 64"><use id="pu" href="#s-pizza"/></svg></span><span class="ch" style="--i:2" aria-hidden="true">S</span><span class="ch" style="--i:3" aria-hidden="true">E</span></h1>
+<p class="lema">Del “no sé” al “ya sé”.</p>
+<p class="res" id="res" aria-live="polite">¿Qué comemos hoy? <b>No sé…</b></p>
+<div class="act"><button class="btn fill" id="dec" type="button">Decidir por mí</button><a class="btn" href="#como">Conoce NOSE</a></div>
+<p class="sub">La app que te ahorra el “¿qué hago?”. Eliges qué necesitas y te da una sola respuesta.</p>
+</div>
+</section>
+<div class="band" aria-hidden="true"><div class="bi" id="bi"></div></div>
+
+<main class="wrap">
+<h2 id="problema">Demasiadas opciones cansan</h2>
+<svg class="sq" viewBox="0 0 170 14" aria-hidden="true"><path d="M2 8c10-9 20 9 30 0s20 9 30 0 20 9 30 0 20 9 30 0 20 9 30 0 10 4 14 0"/></svg>
+<p class="lead">Buscar, comparar, descartar, volver a buscar… Elegir dónde comer, qué ver o qué hacer puede tomar más tiempo que disfrutarlo. NOSE hace lo contrario: menos opciones, mejores decisiones.</p>
+
+<h2 id="como">Así funciona</h2>
+<svg class="sq" viewBox="0 0 170 14" aria-hidden="true"><path d="M2 8c10-9 20 9 30 0s20 9 30 0 20 9 30 0 20 9 30 0 20 9 30 0 10 4 14 0"/></svg>
+<p class="lead">Cuatro pasos, pocos segundos.</p>
+<div class="grid">
+<article class="card rv" style="--a:#FFC93C"><div class="n">1</div><h3>Elige</h3><p>Toca la opción que mejor describe lo que necesitas: “poco tiempo”, “algo barato”, “voy acompañado”.</p></article>
+<article class="card rv" style="--a:#43C6E5"><div class="n">2</div><h3>Un poco de contexto</h3><p>Solo lo justo: presupuesto, tiempo o ubicación. Y siempre con tu permiso.</p></article>
+<article class="card rv" style="--a:#FF8A4C"><div class="n">3</div><h3>Recibe una opción</h3><p>Una recomendación principal, con una explicación breve de por qué.</p></article>
+<article class="card rv" style="--a:#8CD867"><div class="n">4</div><h3>Acepta o veta</h3><p>Si no te convence, dile por qué. NOSE aprende y la próxima acierta más.</p></article>
+</div>
+
+<h2 id="prueba">Pruébalo</h2>
+<svg class="sq" viewBox="0 0 170 14" aria-hidden="true"><path d="M2 8c10-9 20 9 30 0s20 9 30 0 20 9 30 0 20 9 30 0 20 9 30 0 10 4 14 0"/></svg>
+<p class="lead">Una maqueta con ejemplos: elige qué te pasa y mira cómo decide NOSE.</p>
+<div class="demo rv">
+<div class="phone" role="group" aria-label="Maqueta de la app">
+<div class="q">¿Qué necesitas decidir?</div>
+<div class="chips" id="chips"></div>
+<div id="rec" aria-live="polite"></div>
+</div>
+<div class="side"><h3>Una respuesta, no cien</h3><p>Pulsa una necesidad. La app responde con una sola opción y su razón. Si la vetas, te propone otra distinta. Esto es una maqueta con datos de ejemplo.</p></div>
+</div>
+
+<h2 id="por-que">Lo que nos importa</h2>
+<svg class="sq" viewBox="0 0 170 14" aria-hidden="true"><path d="M2 8c10-9 20 9 30 0s20 9 30 0 20 9 30 0 20 9 30 0 20 9 30 0 10 4 14 0"/></svg>
+<div class="grid" style="margin-bottom:60px">
+<article class="card rv" style="--a:#FF6FA5"><h3>Contexto mínimo</h3><p>Pedimos solo lo que ayuda a decidir. Nada de formularios eternos.</p></article>
+<article class="card rv" style="--a:#B58CFF"><h3>Tu privacidad</h3><p>Tú decides qué compartes. Puedes ver, exportar y borrar tus datos.</p></article>
+<article class="card rv" style="--a:#FFA62B"><h3>Sin publicidad disfrazada</h3><p>Si algún día hay patrocinios, estarán claramente señalados.</p></article>
+<article class="card rv" style="--a:#43C6E5"><h3>Hecha para crecer</h3><p>Empieza con Qué Comer y se prepara para Qué Ver y Qué Hacer.</p></article>
+</div>
+
+<h2 id="bajo">Por dentro, en simple</h2>
+<svg class="sq" viewBox="0 0 170 14" aria-hidden="true"><path d="M2 8c10-9 20 9 30 0s20 9 30 0 20 9 30 0 20 9 30 0 20 9 30 0 10 4 14 0"/></svg>
+<p class="lead">Para quien tenga curiosidad por la parte técnica.</p>
+<div class="tech">
+<div class="card rv" style="--a:#FFC93C"><small>App</small><h3>Móvil + web</h3><p>Una misma experiencia en el celular y en el navegador.</p></div>
+<div class="card rv" style="--a:#43C6E5"><small>Cerebro</small><h3>Node.js + NestJS</h3><p>Un servidor ordenado en módulos.</p></div>
+<div class="card rv" style="--a:#8CD867"><small>Memoria</small><h3>PostgreSQL</h3><p>Guarda decisiones, preferencias y catálogo.</p></div>
+<div class="card rv" style="--a:#FF8A4C"><small>Idioma común</small><h3>TypeScript</h3><p>Un solo lenguaje en app y servidor.</p></div>
+<div class="card rv" style="--a:#FF6FA5"><small>Acceso</small><h3>Identidad externa</h3><p>Inicio de sesión seguro, sin guardar contraseñas propias.</p></div>
+<div class="card rv" style="--a:#B58CFF"><small>Calidad</small><h3>Pruebas por riesgo</h3><p>Probamos primero lo que más puede fallar.</p></div>
+</div>
+</main>
+<footer class="foot"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#s-pizza"/></svg>NOSE. Del “no sé” al “ya sé”.</footer>
+
+<script>
+const R=matchMedia('(prefers-reduced-motion:reduce)').matches,$=id=>document.getElementById(id);
+const F=[['arepa','arepa con queso'],['pizza','pizza'],['sushi','sushi'],['taco','tacos'],['coffee','café con algo dulce'],['icecream','helado']];
+const COL=['#FFC93C','#FF8A4C','#FF6FA5','#43C6E5','#8CD867','#B58CFF'];
+function burst(x,y,n=24){if(R)return;for(let i=0;i<n;i++){const e=document.createElement('i'),s=7+Math.random()*7,a=Math.random()*6.28,v=70+Math.random()*130,dx=Math.cos(a)*v,dy=Math.sin(a)*v-60;e.className='fx';e.style.cssText=`left:${x}px;top:${y}px;width:${s}px;height:${s*.6}px;background:${COL[i%6]}`;document.body.appendChild(e);e.animate([{transform:'none',opacity:1},{transform:`translate(${dx}px,${dy}px) rotate(200deg)`,opacity:1,offset:.55},{transform:`translate(${dx*1.2}px,${dy+170}px) rotate(400deg)`,opacity:0}],{duration:900+Math.random()*600,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>e.remove()}}
+const ctr=el=>{const r=el.getBoundingClientRect();return[r.left+r.width/2,r.top+r.height/2]};
+const g=`<span>¿Qué comer? <svg viewBox="0 0 64 64"><use href="#s-pizza"/></svg> ¿Qué ver? <svg viewBox="0 0 64 64"><use href="#s-clapper"/></svg> ¿Qué hacer? <svg viewBox="0 0 64 64"><use href="#s-compass"/></svg> No sé <svg viewBox="0 0 64 64"><use href="#s-arepa"/></svg></span>`;
+$('bi').innerHTML=g+g+g+g;
+
+/* hero */
+const plate=$('plate'),pu=$('pu'),res=$('res'),dec=$('dec');let last=-1;
+function decide(){dec.disabled=true;let f;do{f=Math.floor(Math.random()*F.length)}while(f===last);last=f;res.innerHTML='¿Qué comemos hoy? <b>Pensando…</b>';
+const end=()=>{plate.classList.remove('spin');pu.setAttribute('href','#s-'+F[f][0]);plate.classList.remove('land');void plate.offsetWidth;plate.classList.add('land');burst(...ctr(plate),36);res.innerHTML='Hoy toca: <b>'+F[f][1]+'</b>';dec.textContent='Decidir otra vez';dec.disabled=false};
+if(R){end();return}plate.classList.add('spin');let i=0;(function s(){if(i<12){pu.setAttribute('href','#s-'+F[Math.floor(Math.random()*F.length)][0]);i++;setTimeout(s,60+i*i*2.200)}else end()})()}
+dec.addEventListener('click',decide);setTimeout(decide,R?0:1500);
+
+/* demo */
+const N=[
+{t:'Tengo poco tiempo',o:[['arepa','Arepa con queso','Rápida y cerca: lista en 10 minutos.'],['taco','Tacos','Salen al instante y llenan bien.']]},
+{t:'Algo barato',o:[['taco','Tacos','Buen precio y buena porción.'],['arepa','Arepa con queso','Económica y siempre acierta.']]},
+{t:'Quiero algo dulce',o:[['icecream','Helado','Dulce, rápido y refrescante.'],['coffee','Café con algo dulce','Un descanso con antojo incluido.']]},
+{t:'Voy acompañado',o:[['pizza','Pizza para compartir','Se reparte fácil y a todos les gusta.'],['sushi','Sushi para dos','Variedad para probar entre los dos.']]}];
+let sel=-1,vi=0;
+$('chips').innerHTML=N.map((n,i)=>`<button class="chip" type="button" aria-pressed="false" data-i="${i}">${n.t}</button>`).join('');
+function show(){const n=N[sel],o=n.o[vi%n.o.length];$('rec').innerHTML=`<div class="rec"><svg viewBox="0 0 64 64"><use href="#s-${o[0]}"/></svg><h3>${o[1]}</h3><p>${o[2]}</p><div class="row"><button class="btn" id="ok" type="button">Aceptar</button><button class="btn" id="no" type="button">Vetar</button></div></div>`;
+$('ok').onclick=e=>{burst(...ctr(e.target),30);$('rec').innerHTML='<div class="rec"><h3>¡Decidido!</h3><p>+10 XP · una decisión menos en tu día.</p></div>'};
+$('no').onclick=()=>{vi++;show()}}
+$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;sel=+b.dataset.i;vi=0;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c===b)));show()});
+
+/* scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv,h2+.sq').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
