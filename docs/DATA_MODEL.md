@@ -6,16 +6,6 @@ Este documento especifica el modelo relacional y el diccionario de datos para el
 
 ## 1. Diagrama Entidad-Relación (Estructura Relacional)
 
-[User] 1 —— N [Preference]
-  |
-  ├─── 1 —— N [Decision] ──── N ── 1 [CatalogItem] ──── N ── 1 [Partner]
-  |               |
-  |               ├─── 1 ── N [Impression] ──── N ── 1 [CatalogItem]
-  |               |
-  |               └─── 1 ── 1 [Conversion] ──── N ── 1 [CatalogItem]
-  |
-  └─── 1 —— N [XPEvent]
-
 ```mermaid
 erDiagram
     User ||--o{ Preference : "tiene"
@@ -113,7 +103,6 @@ erDiagram
 
 ### 2.1. Entidad: 'User'
 
-.________________________________________________________________________________________________________________.
 |    Atributo    | Tipo_Dato | Requerido |         Ejemplo        |         Regla_Validación / Descripción       |
 |   ----------   |   ------  |   ------  |        --------        |             -----------------------          |
 |       id       |   UUID    |     Si    | usr_9b1deb4d-3b7d-4bad |              Clave primeria (PK)             |
@@ -125,7 +114,6 @@ erDiagram
 
 ### 2.2. Entidad: 'Preference'
 
-.__________________________________________________________________________________________________________________________________.
 |    Atributo    | Tipo_Dato | Requerido |         Ejemplo        |                  Regla_Validación / Descripción                |
 |   ----------   |   ------  |   ------  |        --------        |                      -----------------------                   |
 |       id       |    UUID   |     Si    |     pref_1234-5678     |                       Clave primeria (PK)                      |
@@ -136,7 +124,6 @@ erDiagram
 
 ### 2.3. Entidad: 'Partner'
 
-.__________________________________________________________________________________________________________________________________.
 |    Atributo    | Tipo_Dato | Requerido |         Ejemplo        |                  Regla_Validación / Descripción                |
 |   ----------   |   ------  |   ------  |        --------        |                      -----------------------                   |
 |       id       |    UUID   |     Si    |   prt_1234-5678-abcd   |                       Clave primeria (PK)                      |
@@ -148,7 +135,6 @@ erDiagram
 
 ### 2.4. Entidad: 'CatalogItem'
 
-.___________________________________________________________________________________________________________________________________________.
 |  Atributo  |Tipo_Dato|Requerido|                     Ejemplo                    |              Regla_Validación / Descripción             |
 |------------|---------|---------|------------------------------------------------|---------------------------------------------------------|
 |     id     |   UUID  |    Si   |               itm_1234-5678-abcd               |                    Clave primeria (PK)                  |
@@ -199,7 +185,6 @@ erDiagram
 
 ### 2.8. Entidad: 'Conversion'
 
-.____________________________________________________________________________________________________________________.
 |     Atributo    | Tipo_Dato | Requerido |         Ejemplo         |         Regla_Validación / Descripción         |
 |-----------------|-----------|   ------  |-------------------------|------------------------------------------------|
 |       id        |    UUID   |     Si    |   cnv_1234-5678-abcd    |               Clave primeria (PK)              |
@@ -208,7 +193,7 @@ erDiagram
 |     user_id     |    UUID   |     Si    |  usr_9b1deb4d-3b7d-4bad |               Clave foránea (FK)               |
 |    created_at   |  DateTime |     Si    |  2026-10-10T12:03:15Z   | Timestamp exacto de la conversión o aceptación |
 
-## Trazabilidad de Entidades con Historias de Usuario (US)
+## 3. Trazabilidad de Entidades con Historias de Usuario (US)
 
 | Entidad | Historias de Usuario Asociadas (US) | Descripción de la Relación / Necesidad Funcional |
 | :--- | :--- | :--- |
